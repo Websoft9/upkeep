@@ -1,0 +1,8 @@
+{
+  "label": "Product",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Business context and product requirements for UpKeep."
+  }
+}
