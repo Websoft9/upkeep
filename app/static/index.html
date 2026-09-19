@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UpKeep Demo</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="hero card">
+        <div>
+          <p class="eyebrow">UpKeep</p>
+          <h1>Industrial Robot Maintenance Intelligence</h1>
+          <p class="lede">
+            A minimal developer UI for telemetry ingest, robot visibility, and recommendation review.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <button id="seed-demo">Seed Demo Data</button>
+          <a href="/docs" target="_blank" rel="noreferrer">Open API Docs</a>
+        </div>
+      </section>
+
+      <section class="grid two-up">
+        <article class="card">
+          <h2>Telemetry Ingest</h2>
+          <form id="telemetry-form">
+            <label>Source <input name="source" value="demo-ui" required /></label>
+            <label>Robot ID <input name="robot_id" value="robot-ui-01" required /></label>
+            <label>Robot Name <input name="robot_name" value="UI Demo Robot" /></label>
+            <label>Cell Name <input name="cell_name" value="Cell UI" /></label>
+            <label>Vendor <input name="vendor" value="DemoVendor" /></label>
+            <label>Temperature C <input name="temperature_c" type="number" value="84" /></label>
+            <label>Vibration mm/s <input name="vibration_mm_s" type="number" value="9" /></label>
+            <label>Cycle Time s <input name="cycle_time_s" type="number" value="78" /></label>
+            <label>Axis Load % <input name="axis_load_pct" type="number" value="71" /></label>
+            <button type="submit">Send Telemetry</button>
+          </form>
+          <pre id="telemetry-result">Ready.</pre>
+        </article>
+
+        <article class="card">
+          <h2>System Health</h2>
+          <div id="health-status" class="status-chip">Loading...</div>
+          <p class="muted">This page talks directly to the running API.</p>
+        </article>
+      </section>
+
+      <section class="grid two-up">
+        <article class="card">
+          <div class="section-head">
+            <h2>Robots</h2>
+            <button id="refresh-robots" class="secondary">Refresh</button>
+          </div>
+          <div id="robots-list" class="list"></div>
+        </article>
+
+        <article class="card">
+          <div class="section-head">
+            <h2>Recommendations</h2>
+            <button id="refresh-recommendations" class="secondary">Refresh</button>
+          </div>
+          <div id="recommendations-list" class="list"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
